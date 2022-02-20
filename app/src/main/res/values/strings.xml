@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MPLearning</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">SPLASH</string>
+    <string name="next">Next</string>
+    <string name="add_text">Add text</string>
+</resources>
