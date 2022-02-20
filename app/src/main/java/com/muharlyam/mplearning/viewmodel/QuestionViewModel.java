@@ -4,13 +4,23 @@ import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
 
 public class QuestionViewModel extends ViewModel {
-    private static final MutableLiveData<String> stringMutableLiveData = new MutableLiveData<>();
 
-    public static void addString(String str) {
-        stringMutableLiveData.setValue(str);
+    private final MutableLiveData<String> question = new MutableLiveData<>();
+    private final MutableLiveData<String> answer = new MutableLiveData<>();
+
+    public void setQuestion(String str) {
+        question.setValue(str);
     }
 
-    public static MutableLiveData<String> getStringMutableLiveData() {
-        return stringMutableLiveData;
+    public void setAnswer(String str) {
+        answer.setValue(str);
+    }
+
+    public MutableLiveData<String> getQuestion() {
+        return question;
+    }
+
+    public MutableLiveData<String> getAnswer() {
+        return question;
     }
 }

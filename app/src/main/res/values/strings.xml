@@ -3,5 +3,6 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">SPLASH</string>
     <string name="next">Next</string>
-    <string name="add_text">Add text</string>
+    <string name="get_question">Get question</string>
+    <string name="show_answer">Show answer</string>
 </resources>

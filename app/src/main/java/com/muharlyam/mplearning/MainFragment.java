@@ -12,6 +12,7 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.muharlyam.mplearning.model.Question;
 import com.muharlyam.mplearning.repository.NetworkRepository;
 import com.muharlyam.mplearning.viewmodel.QuestionViewModel;
 
@@ -19,7 +20,8 @@ public class MainFragment extends Fragment {
 
     NetworkRepository repository = new NetworkRepository();
     private QuestionViewModel viewModel;
-    private TextView textView;
+    private TextView questionView;
+    private TextView answerView;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -35,15 +37,38 @@ public class MainFragment extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_main, container, false);
 
-        Button button = view.findViewById(R.id.button);
-        textView = view.findViewById(R.id.textView);
+        Button questionButton = view.findViewById(R.id.question_button);
+        Button answerButton = view.findViewById(R.id.answer_button);
+        questionView = view.findViewById(R.id.question_view);
+        answerView = view.findViewById(R.id.answer_view);
+
         viewModel = new ViewModelProvider(this).get(QuestionViewModel.class);
-        viewModel.getStringMutableLiveData().observe(getViewLifecycleOwner(), string -> {
-            textView.setText(string);
+
+        viewModel.getQuestion().observe(getViewLifecycleOwner(), question -> {
+            questionView.setText(question);
         });
 
-        button.setOnClickListener(v -> {
-            repository.getRandomQuestion();
+        viewModel.getAnswer().observe(getViewLifecycleOwner(), answer -> {
+            answerView.setText(answer);
+        });
+
+        questionButton.setOnClickListener(v -> {
+            Question randomQuestion = repository.getRandomQuestion();
+
+            if (randomQuestion != null) {
+                if (randomQuestion.getQuestion() != null) {
+                    viewModel.setQuestion(randomQuestion.getQuestion());
+                }
+
+                if (randomQuestion.getAnswer() != null) {
+                    viewModel.setAnswer(randomQuestion.getAnswer());
+                    answerView.setVisibility(View.INVISIBLE);
+                }
+            }
+        });
+
+        answerButton.setOnClickListener(v -> {
+            answerView.setVisibility(View.VISIBLE);
         });
 
         return view;

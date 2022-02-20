@@ -1,12 +1,12 @@
 package com.muharlyam.mplearning.model;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 public class Category {
     private Integer id;
     private String title;
-    private LocalDateTime created_at;
-    private LocalDateTime updated_at;
+    private Date created_at;
+    private Date updated_at;
     private Integer clues_count;
 
     public Integer getId() {
@@ -25,19 +25,19 @@ public class Category {
         this.title = title;
     }
 
-    public LocalDateTime getCreated_at() {
+    public Date getCreated_at() {
         return created_at;
     }
 
-    public void setCreated_at(LocalDateTime created_at) {
+    public void setCreated_at(Date created_at) {
         this.created_at = created_at;
     }
 
-    public LocalDateTime getUpdated_at() {
+    public Date getUpdated_at() {
         return updated_at;
     }
 
-    public void setUpdated_at(LocalDateTime updated_at) {
+    public void setUpdated_at(Date updated_at) {
         this.updated_at = updated_at;
     }
 

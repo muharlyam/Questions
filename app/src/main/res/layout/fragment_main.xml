@@ -11,29 +11,50 @@
         android:layout_height="match_parent">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/question_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginBottom="84dp"
-            android:text="@string/add_text"
+            android:layout_marginBottom="52dp"
+            android:text="@string/get_question"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent" />
 
         <TextView
-            android:id="@+id/textView"
-            android:layout_width="305dp"
-            android:layout_height="87dp"
-            android:layout_marginTop="396dp"
-            android:layout_marginBottom="68dp"
+            android:id="@+id/question_view"
+            android:layout_width="346dp"
+            android:layout_height="367dp"
+            android:layout_marginTop="40dp"
             android:gravity="center"
             android:textColor="#000000"
-            android:textSize="34sp"
-            app:layout_constraintBottom_toTopOf="@+id/button"
+            android:textSize="20sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.0" />
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/answer_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginBottom="52dp"
+            android:text="@string/show_answer"
+            android:textSize="10sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.031"
+            app:layout_constraintStart_toEndOf="@+id/question_button"
+            tools:ignore="SmallSp" />
+
+        <TextView
+            android:id="@+id/answer_view"
+            android:layout_width="279dp"
+            android:layout_height="86dp"
+            android:layout_marginTop="52dp"
+            app:layout_constraintBottom_toTopOf="@+id/question_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/question_view"
+            app:layout_constraintVertical_bias="0.116" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </FrameLayout>

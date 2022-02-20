@@ -1,20 +1,19 @@
 package com.muharlyam.mplearning.model;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 public class Question {
-
     private Integer id;
     private String answer;
     private String question;
     private Integer value;
-    private LocalDateTime airdate;
-    private LocalDateTime created_at;
-    private LocalDateTime updated_at;
+    private Date airdate;
+    private Date created_at;
+    private Date updated_at;
     private Integer category_id;
-    private Integer game_id;
-    private Integer invalid_count;
-    Category category;
+    private Object game_id;
+    private Object invalid_count;
+    private Category category;
 
     public Integer getId() {
         return id;
@@ -48,27 +47,27 @@ public class Question {
         this.value = value;
     }
 
-    public LocalDateTime getAirdate() {
+    public Date getAirdate() {
         return airdate;
     }
 
-    public void setAirdate(LocalDateTime airdate) {
+    public void setAirdate(Date airdate) {
         this.airdate = airdate;
     }
 
-    public LocalDateTime getCreated_at() {
+    public Date getCreated_at() {
         return created_at;
     }
 
-    public void setCreated_at(LocalDateTime created_at) {
+    public void setCreated_at(Date created_at) {
         this.created_at = created_at;
     }
 
-    public LocalDateTime getUpdated_at() {
+    public Date getUpdated_at() {
         return updated_at;
     }
 
-    public void setUpdated_at(LocalDateTime updated_at) {
+    public void setUpdated_at(Date updated_at) {
         this.updated_at = updated_at;
     }
 
@@ -80,19 +79,19 @@ public class Question {
         this.category_id = category_id;
     }
 
-    public Integer getGame_id() {
+    public Object getGame_id() {
         return game_id;
     }
 
-    public void setGame_id(Integer game_id) {
+    public void setGame_id(Object game_id) {
         this.game_id = game_id;
     }
 
-    public Integer getInvalid_count() {
+    public Object getInvalid_count() {
         return invalid_count;
     }
 
-    public void setInvalid_count(Integer invalid_count) {
+    public void setInvalid_count(Object invalid_count) {
         this.invalid_count = invalid_count;
     }
 
